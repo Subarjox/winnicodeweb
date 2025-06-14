@@ -49,7 +49,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="/search">
+          <a class="nav-link  active" href="/search">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
                 <title>Search News</title>
@@ -60,7 +60,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link  " href="/subscribe">
+          <a class="nav-link " href="/subscribe">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="16px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.01 21.01c0 1.1.89 1.99 1.99 1.99s1.99-.89 1.99-1.99h-3.98zm8.87-4.19V11c0-3.25-2.25-5.97-5.29-6.69v-.72C13.59 2.71 12.88 2 12 2s-1.59.71-1.59 1.59v.72C7.37 5.03 5.12 7.75 5.12 11v5.82L3 18.94V20h18v-1.06l-2.12-2.12zM16 13.01h-3v3h-2v-3H8V11h3V8h2v3h3v2.01z"/></svg>
             </div>
@@ -74,7 +74,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link  " href="/sign-in">
+          <a class="nav-link  " href="/register">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="20px" viewBox="0 0 20 20" width="20px" fill="#000000"><g><rect fill="none" height="20" width="20"/></g><g><path d="M6.47,10.67c0.1-0.24,1.26-3,3.02-4.76c3.86-3.86,7.08-3.56,7.95-3.36c0.2,0.88,0.5,4.09-3.36,7.95 c-1.76,1.76-4.52,2.92-4.76,3.02L6.47,10.67z M12.5,9C13.32,9,14,8.33,14,7.5S13.33,6,12.5,6C11.68,6,11,6.67,11,7.5 S11.67,9,12.5,9z M7.04,5.29c-0.46-0.06-0.92,0.1-1.25,0.43L2.25,9.27l3.28,1.09c0.48-1.18,1.53-3.29,3-4.88L7.04,5.29z M14.71,12.96c0.06,0.46-0.1,0.92-0.43,1.25l-3.55,3.55l-1.09-3.28c1.18-0.48,3.29-1.53,4.88-3L14.71,12.96z M5.25,12.5 c-0.62,0-1.18,0.25-1.59,0.66C2.44,14.38,2,18,2,18s3.62-0.44,4.84-1.66c0.41-0.41,0.66-0.97,0.66-1.59 C7.5,13.51,6.49,12.5,5.25,12.5z"/></g></svg>
             </div>
@@ -83,9 +83,9 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link  " href="/sign-in">
+          <a class="nav-link  " href="/login">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="20px" viewBox="0 0 20 20" width="20px" fill="#000000"><g><rect fill="none" height="20" width="20"/></g><g><path d="M6.47,10.67c0.1-0.24,1.26-3,3.02-4.76c3.86-3.86,7.08-3.56,7.95-3.36c0.2,0.88,0.5,4.09-3.36,7.95 c-1.76,1.76-4.52,2.92-4.76,3.02L6.47,10.67z M12.5,9C13.32,9,14,8.33,14,7.5S13.33,6,12.5,6C11.68,6,11,6.67,11,7.5 S11.67,9,12.5,9z M7.04,5.29c-0.46-0.06-0.92,0.1-1.25,0.43L2.25,9.27l3.28,1.09c0.48-1.18,1.53-3.29,3-4.88L7.04,5.29z M14.71,12.96c0.06,0.46-0.1,0.92-0.43,1.25l-3.55,3.55l-1.09-3.28c1.18-0.48,3.29-1.53,4.88-3L14.71,12.96z M5.25,12.5 c-0.62,0-1.18,0.25-1.59,0.66C2.44,14.38,2,18,2,18s3.62-0.44,4.84-1.66c0.41-0.41,0.66-0.97,0.66-1.59 C7.5,13.51,6.49,12.5,5.25,12.5z"/></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
             </div>
             <span class="nav-link-text ms-1">Login</span>
           </a>
@@ -97,89 +97,78 @@
 
 
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-   <x-navbar>News</x-navbar>
+   <x-navbar>Search</x-navbar>
 
     <div class="container-fluid py-2">
       <div class="row">
 
-      <!-- Berita Hot-->
-      <div class="row mt-4">
-        <div class="col-lg-12 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-4">
+      <div class="row mt-4 ">
+        <div class="col-lg-12 mb-lg-0 mb-4 ">
+          <div class="card bodr">
+            <div class="card-body p-4 border-radius-lg">
               <div class="row">
-
-                <div class="col-12 text-center">
-                    <div class="position-relative d-flex align-items-center justify-content-center h-auto overflow-hidden border-radius-lg">
-                      <img class="w-65 h-auto" src="https://drive.google.com/thumbnail?id={{ $berita['gambar']   }}" alt="link">
+                <div class="col-lg-12">
+                  <form action="{{ route('berita.cari') }}" method="GET">
+                    <div class="input-group">
+                      <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                      <input type="text" name="q" class="form-control" placeholder="Cari berita di sini..." value="{{ request('q') }}">
                     </div>
-                  </div>
-
-                <div class="col-lg-12 mt-2">
-                  <div class="d-flex flex-column h-50">
-
-                      <p class="align-middle  text-sm">
-                        <span class="badge badge-sm bg-gradient-success opacity-9">{{ $berita['kategori'] }}</span>
-                      </p>
-
-                      <div class="row"> 
-                        <div class="col-6">
-                      <p class="align-middle  text-sm">
-                        <span class="">{{ $berita['penulis'] }},</span>
-                        <span class="">{{ \Carbon\Carbon::parse($berita['updated_at'])->format('d-m-Y') }}
-                        </span>
-                      </p>
-                        </div>
-                    </div>
-
-                    <h5 class="font-weight-bolder mb-4">{{ $berita['judul'] }}</h5>
-                    <p class="mb-5 opacity-10">{{ html_entity_decode(strip_tags($berita['deskripsi'])) }}
-                    </p>
-                  </div>
+                  </form>
                 </div>
-
-
-
               </div>
             </div>
           </div>
         </div>
-      </div>  
-
-      <!-- Berita Baru -->
-<div class="container-fluid py-2 px-4">
-  <div class="row mt-6">
-    <div class="col-12">
-      <h4 class="font-weight-bolder mb-4">Baca Berita Menarik Selanjutnya</h4>
-    </div>
-  </div>
-
-  <div class="row">
-    @foreach ($beritaRandom as $item) 
-    <div class="col-lg-4 mb-4">
-      <div class="card h-100 p-2 bg-transparent shadow-xl">
-        <div class="overflow-hidden position-relative border-radius-xl bg-cover h-100"
-        style="background-image: url('https://drive.google.com/thumbnail?id={{ $item['gambar']   }}');">
-        <span class="mask bg-gradient-dark"></span>
-        <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-4">
-          <h5 class="text-white font-weight-bolder mb-2 pt-2">{{ \Illuminate\Support\Str::limit($item['judul'], 85) }}</h5>
-          <p class="align-middle  text-sm">
-            <span class="badge badge-sm bg-gradient-info">{{ $item['kategori'] }}</span>
-          </p>
-          <a class="text-white text-sm font-weight-bold mt-auto icon-move-right" href="/post/{{ $item['id'] }}">
-            Baca Selengkapnya... <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-          </a>
-        </div>
       </div>
-    </div>
-  </div>
-    @endforeach
 
-  </div>
+      <div class="container-fluid py-2 px-4">
+        <div class="row mt-6">
+          <div class="col-12">
+            <h4 class="font-weight-bolder mb-4">Hasil Pencarian: "{{ $keyword }}"</h4>
+          </div>
+        </div>
+      
+        <div class="row">
+          @foreach ($berita as $index => $item)
+          <div class="col-lg-4 mb-4 berita-item {{ $index >= 3 ? 'd-none' : '' }}">
+            <div class="card h-100 p-2 bg-transparent shadow-xl">
+              <div class="overflow-hidden position-relative border-radius-xl bg-cover h-100"
+                style="background-image: url('{{ asset('storage/uploads/' . basename($item->gambar)) }}')">
+                <span class="mask bg-gradient-dark"></span>
+                <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-4">
+                  <h5 class="text-white font-weight-bolder mb-2 pt-2">{{ $item->judul }}</h5>
+                  <p class="align-middle text-sm">
+                    <span class="badge badge-sm bg-gradient-info">{{ $item->kategori ?? 'Umum' }}</span>
+                  </p>
+                  <a class="text-white text-sm font-weight-bold mt-auto icon-move-right" href="/expost/{{ $item->id_berita }}">
+                    Baca Selengkapnya... <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        
+          @if ($berita->isEmpty())
+          <div class="col-12 text-center">
+            <p class="text-muted">Tidak ada hasil yang ditemukan.</p>
+          </div>
+          @endif
+        </div>
+        
+        @if ($berita->count() > 3)
+        <div class="row">
+          <div class="col-lg-12 mb-4 mt-4 text-center">
+            <button class="btn btn-round btn-sm btn-outline-primary me-2" id="lihatSemuaBtn">Lihat Semua Hasil</button>
+          </div>
+        </div>
+        @endif
+      </div>
+    
 </div>
 
 
-<x-footer></x-footer>
+    <x-footer></x-footer>
   </main>
 
   <!--   Core JS Files   -->
@@ -188,7 +177,20 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const button = document.getElementById('lihatSemuaBtn');
+      if (button) {
+        button.addEventListener('click', function () {
+          document.querySelectorAll('.berita-item.d-none').forEach(function (el) {
+            el.classList.remove('d-none');
+          });
+          button.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

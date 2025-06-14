@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="../media/logo.png">
+  <link rel="icon" type="image/png" href="../media/logo.png">
   <title>
     Winnicode News
   </title> 
@@ -104,7 +105,7 @@
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Winnicode News</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Nama Page ganti via laravel </h6>
+          <h6 class="font-weight-bolder mb-0">News</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center"> </div>
@@ -201,7 +202,7 @@
     <div class="container-fluid py-2">
       <div class="row">
 
-      <!-- Berita Hot-->
+      <!-- Berita-->
       <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
           <div class="card">
@@ -210,7 +211,7 @@
 
                 <div class="col-12 text-center">
                     <div class="position-relative d-flex align-items-center justify-content-center h-auto overflow-hidden border-radius-lg">
-                      <img class="w-65 h-auto" src="https://drive.google.com/thumbnail?id={{ $berita['gambar']   }}" alt="link">
+                      <img class="w-65 h-auto" src="{{ asset('storage/uploads/' . basename($berita->gambar)) }}" alt="link">
                     </div>
                   </div>
 
@@ -218,25 +219,60 @@
                   <div class="d-flex flex-column h-50">
 
                       <p class="align-middle  text-sm">
-                        <span class="badge badge-sm bg-gradient-success opacity-9">{{ $berita['kategori'] }}</span>
+                        <span class="badge badge-sm bg-gradient-success opacity-9">{{ $berita->kategori }}</span>
                       </p>
 
-                      <div class="row"> 
+                    <div class="row"> 
                         <div class="col-6">
                       <p class="align-middle  text-sm">
-                        <span class="">{{ $berita['penulis'] }},</span>
-                        <span class="">{{ \Carbon\Carbon::parse($berita['updated_at'])->format('d-m-Y') }}
+                        <span class="">penulis,</span>
+                        <span class="">{{$berita->created_at  }}
                         </span>
                       </p>
                         </div>
                     </div>
 
-                    <h5 class="font-weight-bolder mb-4">{{ $berita['judul'] }}</h5>
-                    <p class="mb-5 opacity-10">{{ html_entity_decode(strip_tags($berita['deskripsi'])) }}
+                    <h5 class="font-weight-bolder mb-4">{{$berita->judul }}</h5>
+                    <p class="mb-5 opacity-10">{{ $berita->deskripsi }}
                     </p>
                   </div>
                 </div>
+    
+               <!-- Mulai komponen -->
+                  <div class="row mt-4 text-center">
+                    <!-- VIEW -->
+                    <div class="col-4">
+                      <p class="mb-1 text-secondary text-xs">Viewers</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#008ddc"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+                      <p id="viewercount" class="mt-1 text-secondary text-info">{{ $berita->views }}</p>
+                    </div>
 
+                    <!-- LIKE -->
+                    <div class="col-4">
+                      <p class="mb-1 text-secondary text-xs">Likes</p>
+                      <button id="likeBtn" class="btn-icon border-0 bg-transparent">
+                        <svg id="likeIcon" xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" class="text-secondary"  fill="#000000">
+                          <path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/>
+                        </svg>
+                        <p id="likeCount" class="mt-1 text-secondary">{{ $berita->likes }}</p>
+                      </button>
+                    </div>
+
+                    <!-- DISLIKE -->
+                    <div class="col-4">
+                      <p class="mb-1 text-secondary text-xs">Dislikes</p>
+                      <button id="dislikeBtn" class="btn-icon border-0 bg-transparent">
+                        <svg id="dislikeIcon" xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" class="text-secondary" fill="#000000">
+                          <path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/>
+                        </svg> 
+                        <p id="dislikeCount" class="mt-1 text-secondary">{{ $berita->dislikes }}</p>
+                      </button>
+                    </div>
+                  </div>
+
+
+                </div>
+                
 
 
               </div>
@@ -254,25 +290,27 @@
   </div>
 
   <div class="row">
-    @foreach ($beritaRandom as $item) 
-    <div class="col-lg-4 mb-4">
-      <div class="card h-100 p-2 bg-transparent shadow-xl">
-        <div class="overflow-hidden position-relative border-radius-xl bg-cover h-100"
-        style="background-image: url('https://drive.google.com/thumbnail?id={{ $item['gambar']   }}');">
-        <span class="mask bg-gradient-dark"></span>
-        <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-4">
-          <h5 class="text-white font-weight-bolder mb-2 pt-2">{{ \Illuminate\Support\Str::limit($item['judul'], 85) }}</h5>
-          <p class="align-middle  text-sm">
-            <span class="badge badge-sm bg-gradient-info">{{ $item['kategori'] }}</span>
-          </p>
-          <a class="text-white text-sm font-weight-bold mt-auto icon-move-right" href="/post/{{ $item['id'] }}">
-            Baca Selengkapnya... <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-    @endforeach
+ @foreach ($beritaNext as $item)
+ <div class="col-lg-4 mb-4">
+   <div class="card h-100 p-2 bg-transparent shadow-xl">
+     <div class="overflow-hidden position-relative border-radius-xl bg-cover h-100"
+     style="background-image: url('{{ asset('storage/uploads/' . basename($item->gambar)) }}');">
+     <span class="mask bg-gradient-dark"></span>
+     <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-4">
+       <h5 class="text-white font-weight-bolder mb-2 pt-2">{{ $item->judul }}</h5>
+       <p class="align-middle  text-sm">
+         <span class="badge badge-sm bg-gradient-info">kategori</span>
+       </p>
+       <a class="text-white text-sm font-weight-bold mt-auto icon-move-right" href="/expost/{{ $item->id_berita }}">
+         Baca Selengkapnya... <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+       </a>
+     </div>
+   </div>
+ </div>
+</div>
+   
+ @endforeach
+ 
 
   </div>
 </div>
@@ -292,6 +330,128 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.1.0"></script>
+
+  <script>
+    let likeActive = false;
+    let dislikeActive = false;
+    
+    const beritaId = {{ $berita->id_berita }};
+    const likeBtn = document.getElementById('likeBtn');
+    const dislikeBtn = document.getElementById('dislikeBtn');
+    
+    const likeIcon = document.getElementById('likeIcon');
+    const dislikeIcon = document.getElementById('dislikeIcon');
+    
+    const likeCount = document.getElementById('likeCount');
+    const dislikeCount = document.getElementById('dislikeCount');
+    
+    // Ambil status dari localStorage saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedStatus = JSON.parse(localStorage.getItem(`berita_${beritaId}_status`));
+      if (savedStatus) {
+        likeActive = savedStatus.likeActive;
+        dislikeActive = savedStatus.dislikeActive;
+    
+        if (likeActive) {
+          likeIcon.classList.replace('text-secondary', 'text-success');
+          likeCount.classList.replace('text-secondary', 'text-success');
+          likeIcon.setAttribute("fill", "#75FB4C");
+        }
+    
+        if (dislikeActive) {
+          dislikeIcon.classList.replace('text-secondary', 'text-danger');
+          dislikeCount.classList.replace('text-secondary', 'text-danger');
+          dislikeIcon.setAttribute("fill", "#EA3323");
+        }
+      }
+    });
+    
+    // Simpan status ke localStorage
+    function saveStatus() {
+      localStorage.setItem(`berita_${beritaId}_status`, JSON.stringify({
+        likeActive: likeActive,
+        dislikeActive: dislikeActive
+      }));
+    }
+    
+    // Kirim update ke server
+    function updateInteraction(action) {
+      fetch('/berita/interact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({
+          id_berita: beritaId,
+          action: action
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        likeCount.textContent = data.likes;
+        dislikeCount.textContent = data.dislikes;
+      })
+      .catch(err => console.error('Gagal mengirim data:', err));
+    }
+    
+    // Event klik LIKE
+    likeBtn.addEventListener('click', () => {
+      if (!likeActive) {
+        likeActive = true;
+        likeIcon.classList.replace('text-secondary', 'text-success');
+        likeCount.classList.replace('text-secondary', 'text-success');
+        likeIcon.setAttribute("fill", "#75FB4C");
+        updateInteraction('like');
+    
+        if (dislikeActive) {
+          dislikeActive = false;
+          dislikeIcon.classList.replace('text-danger', 'text-secondary');
+          dislikeCount.classList.replace('text-danger', 'text-secondary');
+          dislikeIcon.setAttribute("fill", "#000000");
+          updateInteraction('undislike');
+        }
+      } else {
+        likeActive = false;
+        likeIcon.classList.replace('text-success', 'text-secondary');
+        likeCount.classList.replace('text-success', 'text-secondary');
+        likeIcon.setAttribute("fill", "#000000");
+        updateInteraction('unlike');
+      }
+    
+      saveStatus();
+    });
+    
+    // Event klik DISLIKE
+    dislikeBtn.addEventListener('click', () => {
+      if (!dislikeActive) {
+        dislikeActive = true;
+        dislikeIcon.classList.replace('text-secondary', 'text-danger');
+        dislikeCount.classList.replace('text-secondary', 'text-danger');
+        dislikeIcon.setAttribute("fill", "#EA3323");
+        updateInteraction('dislike');
+    
+        if (likeActive) {
+          likeActive = false;
+          likeIcon.classList.replace('text-success', 'text-secondary');
+          likeCount.classList.replace('text-success', 'text-secondary');
+          likeIcon.setAttribute("fill", "#000000");
+          updateInteraction('unlike');
+        }
+      } else {
+        dislikeActive = false;
+        dislikeIcon.classList.replace('text-danger', 'text-secondary');
+        dislikeCount.classList.replace('text-danger', 'text-secondary');
+        dislikeIcon.setAttribute("fill", "#000000");
+        updateInteraction('undislike');
+      }
+    
+      saveStatus();
+    });
+    </script>
+    
+  
+  
 </body>
 
 </html>

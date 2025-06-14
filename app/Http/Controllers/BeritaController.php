@@ -85,5 +85,6 @@ class beritaController extends Controller
             'beritaRandom' => $beritaRandom
         ]);
     }
+  
     
 }

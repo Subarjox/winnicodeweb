@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -7,7 +6,7 @@ use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ROuteTest extends TestCase
+class BeritaTest extends TestCase
 {
     use RefreshDatabase;
 

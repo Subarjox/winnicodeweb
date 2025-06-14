@@ -27947,4 +27947,32 @@ pre[class*=language-] {
   }
 }
 
+.btn-icon svg {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-icon:hover svg {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.fill-success {
+  fill: #75FB4C !important;
+}
+
+.fill-danger {
+  fill: #EA3323 !important;
+}
+
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sitemap-list li p {
+  margin-bottom: 6px;
+}
+
+
 /*# sourceMappingURL=dashboard-free.css.map */
